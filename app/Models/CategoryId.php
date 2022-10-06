@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class Thumbnail extends Model
+class CategoryId extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
-        'originalname',
-        'size',
-        'path',
-        'mimetype',
+        'name',
+        'description',
     ];
 }
