@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use App\Http\Requests\CarModelsRequest;
 
 class CarModelCollection extends ResourceCollection
 {
@@ -12,8 +13,8 @@ class CarModelCollection extends ResourceCollection
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public function toArray($request)
+    public function toArray(CarModelsReques $request)
     {
-        return CarModelResource::collection($this->paginate(20));
+        return CarModelResource::collection($this->collection);
     }
 }
