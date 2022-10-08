@@ -17,4 +17,9 @@ class Thumbnail extends Model
         'path',
         'mimetype',
     ];
+
+    public function carModels()
+    {
+        return $this->hasMany(CarModel::class,'thumbnail_id');
+    }
 }

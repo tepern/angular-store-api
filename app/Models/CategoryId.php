@@ -15,4 +15,9 @@ class CategoryId extends Model
         'name',
         'description',
     ];
+
+    public function carModels()
+    {
+        return $this->hasMany(CarModel::class,'category_id');
+    }
 }
