@@ -14,13 +14,11 @@ class CreateCategoryIdsTable extends Migration
     public function up()
     {
         Schema::create('category_ids', function (Blueprint $table) {
-            Schema::create('cities', function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('name')->unique();
-                $table->text('description')->nullable();
-                $table->timestamps();
-                $table->softDeletes();
-            });
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->text('description')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

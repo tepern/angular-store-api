@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use  App\Http\Resources\ThumbnailResource;
 
 class CarModelResource extends JsonResource
 {
@@ -23,7 +24,7 @@ class CarModelResource extends JsonResource
             'name' => $this->name,
             'number' => $this->number,
             'categoryId' => CategoryIdResource::make($this->categoryId),
-            'thumbnail' => Thumbnail::make($this->thumbnail),
+            'thumbnail' => ThumbnailResource::make($this->thumbnail),
             'tank' => $this->tank,
             'colors' => $this->colors,
             'id' => $this->id,

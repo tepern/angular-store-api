@@ -13,7 +13,7 @@ class CarModelCollection extends ResourceCollection
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public function toArray(CarModelsReques $request)
+    public function toArray($request)
     {
         return CarModelResource::collection($this->collection);
     }

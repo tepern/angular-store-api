@@ -20,6 +20,6 @@ class Thumbnail extends Model
 
     public function carModels()
     {
-        return $this->hasMany(CarModel::class,'thumbnail_id');
+        return $this->hasMany(CarModel::class);
     }
 }

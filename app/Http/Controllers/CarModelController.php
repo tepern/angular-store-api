@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CarModelsRequest;
 use App\Models\CarModel;
+use App\Http\Resources\CarModelResource;
+use App\Http\Resources\CarModelCollection;
 
 class CarModelController extends Controller
 {
@@ -20,7 +22,7 @@ class CarModelController extends Controller
         $paginatorCarModels = CarModel::all();
         
         return new CarModelCollection(
-            $paginatorCarModels->paginate($data['limit'])
+            CarModel::paginate($data['limit'])
         );
     }
 

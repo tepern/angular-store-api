@@ -13,5 +13,7 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('cities', CityController::class);
+    $router->resource('car-models', CarModelController::class);
+    $router->resource('category-ids', CategoryIdController::class);
 
 });

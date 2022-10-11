@@ -33,6 +33,6 @@ class CarModel extends Model
 
     public function thumbnail()
     {
-        return $this->belongsTo(Thumbnail::class,'thumbnail_id');
+        return $this->belongsTo(Thumbnail::class);
     }
 }

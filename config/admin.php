@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\LaravelAdmin\DropdownActions;
+use Illuminate\Contracts\Filesystem\Filesystem;
+
 return [
 
     /*
@@ -153,7 +156,7 @@ return [
     'upload' => [
 
         // Disk in `config/filesystem.php`.
-        'disk' => 'admin',
+        'disk' => Filesystem::VISIBILITY_PUBLIC,
 
         // Image and file upload path under the disk above.
         'directory' => [

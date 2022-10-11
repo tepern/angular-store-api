@@ -27,7 +27,9 @@ Route::group($groupData, function() {
     //City
     $cityMethods = ['index', 'show'];
     $pointMethods = ['index', 'show'];
+    $carMethods = ['index', 'show'];
     //$methodComment = [ 'store', 'create', 'edit', 'update', 'destroy', 'show'];
     Route::resource('city','CityController')->only($cityMethods)->names('api.db.city');
     Route::resource('point','PointController')->only($pointMethods)->names('api.db.point');
+    Route::resource('car','CarModelController')->only($carMethods)->names('api.db.car');
 });
