@@ -15,5 +15,6 @@ Route::group([
     $router->resource('cities', CityController::class);
     $router->resource('car-models', CarModelController::class);
     $router->resource('category-ids', CategoryIdController::class);
-
+    $router->resource('rates', RateController::class);
+    $router->resource('rate-types', RateTypeController::class);
 });

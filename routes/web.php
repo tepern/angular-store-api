@@ -19,13 +19,18 @@ Route::get('/', function () {
 
 $groupData = [
     'namespace' => '\App\Http\Controllers',
-    'prefix' => 'api/db',
+    'prefix' => 'test/',
 ];
 
 Route::group($groupData, function() {
     //City
     $cityMethods = ['index', 'show'];
-    //$methodComment = [ 'store', 'create', 'edit', 'update', 'destroy', 'show'];
-    //Route::resource('city','CityController')->names('api.db.city');
-    //Route::resource('point','PointController')->names('api.db.point');
+    $pointMethods = ['index', 'show'];
+    $carMethods = ['index', 'show'];
+    $rateMethods = ['index', 'show'];
+    
+    Route::resource('city','CityController')->only($cityMethods)->names('api.db.city');
+    Route::resource('point','PointController')->only($pointMethods)->names('api.db.point');
+    Route::resource('car','CarModelController')->only($carMethods)->names('api.db.car');
+    Route::resource('rate','RateController')->only($rateMethods)->names('api.db.rate');
 });

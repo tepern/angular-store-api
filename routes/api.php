@@ -28,8 +28,10 @@ Route::group($groupData, function() {
     $cityMethods = ['index', 'show'];
     $pointMethods = ['index', 'show'];
     $carMethods = ['index', 'show'];
-    //$methodComment = [ 'store', 'create', 'edit', 'update', 'destroy', 'show'];
+    $rateMethods = ['index', 'show'];
+    
     Route::resource('city','CityController')->only($cityMethods)->names('api.db.city');
     Route::resource('point','PointController')->only($pointMethods)->names('api.db.point');
     Route::resource('car','CarModelController')->only($carMethods)->names('api.db.car');
+    Route::resource('rate','RateController')->only($rateMethods)->names('api.db.rate');
 });

@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rate;
+use App\Http\Resources\RateResource;
 use Illuminate\Http\Request;
-use App\Http\Requests\CarModelsRequest;
-use App\Models\CarModel;
-use App\Http\Resources\CarModelResource;
-use App\Http\Resources\CarModelCollection;
 
-class CarModelController extends Controller
+class RateController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * 
-     * @param App\Http\Requests\CarModelsRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function index(CarModelsRequest $request)
+    public function index()
     {
-        $data = $request->all();
-        
-        return new CarModelCollection(
-            CarModel::paginate($data['limit'])
-        );
+        $rates = Rate::all();
+
+        return RateResource::collection($rates);
     }
 
     /**
@@ -54,9 +49,9 @@ class CarModelController extends Controller
      */
     public function show($id)
     {
-        $carModel = CarModel::findOrFail($id);
+        $rate = Rate::findOrFail($id);
         
-        return new CarModelResource($carModel);
+        return new RateResource($rate);
     }
 
     /**
