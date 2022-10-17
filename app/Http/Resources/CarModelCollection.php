@@ -15,6 +15,9 @@ class CarModelCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return CarModelResource::collection($this->collection);
+        return [
+            'data'  => CarModelResource::collection($this->collection),
+            'count' => CarModelResource::collection($this->collection)->count()
+        ];    
     }
 }

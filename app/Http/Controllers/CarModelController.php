@@ -13,16 +13,22 @@ class CarModelController extends Controller
     /**
      * Display a listing of the resource.
      * 
-     * @param App\Http\Requests\CarModelsRequest $request
+     * @param Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(CarModelsRequest $request)
+    public function index(Request $request)
     {
         $data = $request->all();
+        if (!empty($data['limit']) && $data['limit']>0) {
+            return new CarModelCollection(
+                CarModel::paginate($data['limit'])
+            );
+        } else {
+            return new CarModelCollection(
+                CarModel::all()
+            );
+        }
         
-        return new CarModelCollection(
-            CarModel::paginate($data['limit'])
-        );
     }
 
     /**

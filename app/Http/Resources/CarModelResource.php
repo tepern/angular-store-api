@@ -28,7 +28,7 @@ class CarModelResource extends JsonResource
             'thumbnail' => ThumbnailResource::make($this->thumbnail),
             'tank' => $this->tank,
             'colors' => $this->colors,
-            'id' => $this->id,
+            'id' => (string)$this->id,
         ];
     }
 }

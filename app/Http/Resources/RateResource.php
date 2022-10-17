@@ -18,7 +18,7 @@ class RateResource extends JsonResource
         return [
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
-            'id'        => $this->id,
+            'id'        => (string)$this->id,
             'price'     => $this->price,
             'rateTypeId' => RateTypeResource::make($this->rateType),
         ];
