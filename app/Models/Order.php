@@ -9,7 +9,21 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+
+    protected $fillable = [
+        'color',
+        'date_from',
+        'date_to',
+        'price',
+        'is_full_tank',
+        'is_need_child_chair',
+        'is_right_wheel',
+        'city_id',
+        'point_id',
+        'rate_id',
+        'order_status_id',
+        'car_id'
+    ];
 
     public function orderStatus()
     {
