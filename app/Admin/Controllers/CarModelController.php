@@ -10,7 +10,6 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Storage;
-use App\Admin\Selectable\Thumbnails;
 
 class CarModelController extends AdminController
 {
@@ -36,7 +35,7 @@ class CarModelController extends AdminController
         $grid->column('priceMin', __('PriceMin'));
         $grid->column('priceMax', __('PriceMax'));
         $grid->column('number', __('Number'));
-        $grid->column('category_id', __('Category id'));
+        $grid->column('category_id', __('Category'));
         $grid->column('tank', __('Tank'));
         $grid->column('colors', __('Colors'));
         $grid->column('created_at', __('Created at'));
@@ -62,8 +61,8 @@ class CarModelController extends AdminController
         $show->field('priceMin', __('PriceMin'));
         $show->field('priceMax', __('PriceMax'));
         $show->field('number', __('Number'));
-        $show->field('category_id', __('Category id'));
-        $show->field('thumbnail_id', __('Thumbnail id'));
+        $show->field('category_id', __('Category'));
+        $show->field('thumbnail_id', __('Thumbnail'));
         $show->field('tank', __('Tank'));
         $show->field('colors', __('Colors'));
         $show->field('created_at', __('Created at'));

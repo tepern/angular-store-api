@@ -33,11 +33,11 @@ class OrderController extends AdminController
         $grid = new Grid(new Order());
 
         $grid->column('id', __('Id'));
-        $grid->column('order_status_id', __('Order status id'));
-        $grid->column('city_id', __('City id'));
-        $grid->column('point_id', __('Point id'));
-        $grid->column('car_id', __('Car id'));
-        $grid->column('rate_id', __('Rate id'));
+        $grid->column('order_status_id', __('Order status'));
+        $grid->column('city_id', __('City'));
+        $grid->column('point_id', __('Point'));
+        $grid->column('car_id', __('Car'));
+        $grid->column('rate_id', __('Rate'));
         $grid->column('color', __('Color'));
         $grid->column('date_from', __('Date from'));
         $grid->column('date_to', __('Date to'));
@@ -89,11 +89,11 @@ class OrderController extends AdminController
     {
         $form = new Form(new Order());
 
-        $form->select('order_status_id')->options(OrderStatus::all()->pluck('name','id'));
-        $form->select('city_id')->options(City::all()->pluck('name','id'));
-        $form->select('point_id',  __('Point id'))->options(Point::all()->pluck('name','id'));
+        $form->select('order_status_id', __('Order status'))->options(OrderStatus::all()->pluck('name','id'));
+        $form->select('city_id', __('City'))->options(City::all()->pluck('name','id'));
+        $form->select('point_id',  __('Point'))->options(Point::all()->pluck('name','id'));
         $form->belongsTo('car_id', CarModels::class, __('Car model'));
-        $form->select('rate_id')->options(Rate::all()->pluck('price','id'));
+        $form->select('rate_id', __('Rate'))->options(Rate::all()->pluck('price','id'));
         $form->text('color', __('Color'));
         $form->number('date_from', __('Date from'));
         $form->number('date_to', __('Date to'));

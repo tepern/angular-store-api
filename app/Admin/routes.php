@@ -18,4 +18,5 @@ Route::group([
     $router->resource('rates', RateController::class);
     $router->resource('rate-types', RateTypeController::class);
     $router->resource('orders', OrderController::class);
+    $router->resource('order-statuses', OrderStatusController::class);
 });
