@@ -20,9 +20,6 @@ class AdminMenuOrderSeeder extends Seeder
      */
     public function run()
     {
-        DB::table(config('admin.database.menu_table'))->truncate();
-        Menu::truncate();
-
         $this->mainAdminRole = Role::query()->where(['slug' => 'level-5'])->first();
 
         $this->createOrderStatusMenu($this->mainAdminRole);
