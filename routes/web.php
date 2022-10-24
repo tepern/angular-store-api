@@ -38,17 +38,3 @@ Route::group($groupData, function() {
     Route::resource('rate','RateController')->only($rateMethods)->names('api.db.rate');
     Route::resource('order','OrderController')->only($orderMethods)->names('api.db.order');
 });
-
-Route::get('/tokens/create', function () {
-    $user = new User([
-        'name'     => 'angular',
-        'email'    => 'angular@angular.io',
-        'password' => bcrypt('12345')
-    ]);
-
-    $user->save();
-    
-    $token = $user->createToken('angular');
-
-    return ['token' => $token->plainTextToken];
-});
