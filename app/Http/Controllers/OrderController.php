@@ -37,7 +37,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $data = $request->input();
-        dd($data);
+        
         $order_data['order_status_id'] = (int)$data['orderStatusId']['id'];
         $order_data['city_id'] = (int)$data['cityId']['id'];
         $order_data['point_id'] = (int)$data['pointId']['id'];
