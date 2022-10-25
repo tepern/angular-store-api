@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 header('Access-Control-Allow-Origin:  https://tepern.github.io');
 header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, PATCH, DELETE');
 header('Access-Control-Allow-Headers: *');
-header('Access-Control-Allow-Credentials: true');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
