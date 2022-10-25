@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*.herokuapp.com'],
+    'allowed_origins' => ['*.herokuapp.com', 'tepern.github.io'],
 
     'allowed_origins_patterns' => [],
 
