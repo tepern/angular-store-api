@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*.herokuapp.com', 'tepern.github.io'],
+    'allowed_origins' => ['https://car-store-api-12.herokuapp.com/', 'https://tepern.github.io/'],
 
     'allowed_origins_patterns' => [],
 
