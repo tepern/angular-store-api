@@ -37,25 +37,26 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $data = $request->input();
-        
-        $order_data['order_status_id'] = (int)$data['orderStatusId']['id'];
-        $order_data['city_id'] = (int)$data['cityId']['id'];
-        $order_data['point_id'] = (int)$data['pointId']['id'];
-        $order_data['car_id'] = (int)$data['carId']['id'];
-        $order_data['color'] = $data['color'];
-        $order_data['date_from'] = $data['dateFrom'];
-        $order_data['date_to'] = $data['dateTo'];
-        $order_data['rate_id'] = (int)$data['rateId']['id'];
-        $order_data['price'] = $data['price'];
-        $order_data['is_full_tank'] = $data['isFullTank'];
-        $order_data['is_need_child_chair'] = $data['isNeedChildChair'];
-        $order_data['is_right_wheel'] = $data['isRightWheel'];
+        if (!empty($data)) {
+            $order_data['order_status_id'] = (int)$data['orderStatusId']['id'];
+            $order_data['city_id'] = (int)$data['cityId']['id'];
+            $order_data['point_id'] = (int)$data['pointId']['id'];
+            $order_data['car_id'] = (int)$data['carId']['id'];
+            $order_data['color'] = $data['color'];
+            $order_data['date_from'] = $data['dateFrom'];
+            $order_data['date_to'] = $data['dateTo'];
+            $order_data['rate_id'] = (int)$data['rateId']['id'];
+            $order_data['price'] = $data['price'];
+            $order_data['is_full_tank'] = $data['isFullTank'];
+            $order_data['is_need_child_chair'] = $data['isNeedChildChair'];
+            $order_data['is_right_wheel'] = $data['isRightWheel'];
 
-        $order = new Order($order_data);
+            $order = new Order($order_data);
        
-        $order->save();
-        
-        return new OrderResource($order);
+            $order->save();
+            
+            return new OrderResource($order);
+        }
     }
 
     /**
