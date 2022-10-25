@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*order*'],
+    'allowed_origins' => ['*car-store-api-12*'],
 
     'allowed_origins_patterns' => [],
 
