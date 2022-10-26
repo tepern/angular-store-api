@@ -121,15 +121,4 @@ class OrderController extends Controller
             return (new OrderResource($order))->additional(['msg' => 'Ошибка сохранения']);    
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
