@@ -64,7 +64,6 @@ class CarModelController extends AdminController
         $show->field('category_id', __('Category'));
         $show->field('thumbnail_id', __('Thumbnail'));
         $show->field('tank', __('Tank'));
-        $show->field('colors', __('Colors'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
         $show->field('deleted_at', __('Deleted at'));
@@ -93,7 +92,9 @@ class CarModelController extends AdminController
         $form->select('category_id',  __('Category'))->options(CategoryId::all()->pluck('name','id'));
         $form->image('thumbnail.originalname');
         $form->saving(function (Form $form) {
-            $this->saveThumbnail($form);
+            if ($form->thumbnail) {
+                $this->saveThumbnail($form);
+            }
          });
         return $form;
     }
