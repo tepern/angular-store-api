@@ -111,24 +111,27 @@ class CarModelController extends AdminController
         $thumbnail = new Thumbnail($form->thumbnail);
         if (!empty($thumbnail->originalname)) {
             $img = $thumbnail->originalname;
-            $thumbnail->originalname = $img->getClientOriginalName();
-            $thumbnail->mimetype = $img->getMimeType();
-            $thumbnail->size = $img->getSize();
-            $data = file_get_contents($img);
-            $thumbnail->size = filesize($img);
-            $type = $thumbnail->mimetype;
-            $thumbnail->path = 'data:' . $type . ';base64,' . base64_encode($data);
+            if (is_object($img)) {
+                $thumbnail->originalname = $img->getClientOriginalName();
+                $thumbnail->mimetype = $img->getMimeType();
+                $thumbnail->size = $img->getSize();
+                $data = file_get_contents($img);
+                $thumbnail->size = filesize($img);
+                $type = $thumbnail->mimetype;
+                $thumbnail->path = 'data:' . $type . ';base64,' . base64_encode($data);
 
-            if (!empty($form->thumbnail_id)) {
-                $image = Thumbnail::find($form->thumbnail_id);
-                $image->originalname = $thumbnail->originalname;
-                $image->mimetype = $thumbnail->mimetype;
-                $image->size = $thumbnail->size;
-                $image->path = $thumbnail->path;
-                $image->update();
-            } else {
-                $thumbnail->save();
-                $form->thumbnail_id = $thumbnail->id;
+                if (!empty($form->thumbnail_id)) {
+                    $image = Thumbnail::find($form->thumbnail_id);
+                    $image->originalname = $thumbnail->originalname;
+                    $image->mimetype = $thumbnail->mimetype;
+                    $image->size = $thumbnail->size;
+                    $image->path = $thumbnail->path;
+                    $image->update();
+                } else {
+                    $thumbnail->save();
+                    $form->thumbnail_id = $thumbnail->id;
+                }
+
             }
         }
     } 
