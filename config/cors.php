@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://tepern.github.io'],
+    //'allowed_origins' => ['https://tepern.github.io'],
 
     'allowed_origins_patterns' => [],
 
