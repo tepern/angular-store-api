@@ -15,20 +15,20 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*'],
 
-    'allowed_methods' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    'allowed_methods' => ['GET', 'POST', 'PUT', 'OPTIONS'],
 
     'allowed_origins' => ['https://tepern.github.io'],
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['X-Api-Factory-Application-Id', 'Content-Type', 'Authorization', 'Accept'],
+    'allowed_headers' => ['X-Api-Factory-Application-Id', 'Content-Type', 'Authorization'],
 
-    'exposed_headers' => ['Authorization', 'X-Api-Factory-Application-Id', 'Accept'],
+    'exposed_headers' => [],
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];
