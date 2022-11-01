@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-if (Request::getMethod() == 'OPTIONS') {
+if ($request->method() == 'OPTIONS') {
     header('Access-Control-Allow-Origin: *');
 }
 
