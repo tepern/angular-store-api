@@ -18,6 +18,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+if (Request::getMethod() == 'OPTIONS') {
+    header('Access-Control-Allow-Origin: *');
+}
+
 $groupData = [
     'namespace' => '\App\Http\Controllers',
     'prefix' => 'db',
