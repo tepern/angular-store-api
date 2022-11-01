@@ -25,7 +25,7 @@ return [
 
     'allowed_headers' => ['X-Api-Factory-Application-Id', 'Content-Type', 'Authorization', 'Accept'],
 
-    'exposed_headers' => ['*'],
+    'exposed_headers' => ['*', 'Authorization', 'X-Api-Factory-Application-Id', 'Accept'],
 
     'max_age' => 0,
 
