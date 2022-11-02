@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class OptionsCorsResponse
 {
@@ -25,6 +26,9 @@ class OptionsCorsResponse
         $headers = [
             'Access-Control-Allow-Origin' => '*',
         ];
-        return $response->withHeaders($headers)->response('ok', 200);
+
+        $response = Http::post('https://car-store-api-12.herokuapp.com/order/', $request->input());
+
+        return $response->withHeaders($headers);
     }
 }
