@@ -25,6 +25,6 @@ class OptionsCorsResponse
         $headers = [
             'Access-Control-Allow-Origin' => '*',
         ];
-        return $response->withHeaders($headers);
+        return $response->withHeaders($headers)->response('ok', 200);
     }
 }
