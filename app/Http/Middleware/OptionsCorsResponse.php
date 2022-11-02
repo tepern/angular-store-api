@@ -19,7 +19,7 @@ class OptionsCorsResponse
         /* @var $response Response */
         $response = $next($request);
         if (!$request->isMethod('OPTIONS')) {
-            return $response->response('ok', 201);
+            return $response;
         }
         
         $headers = [
