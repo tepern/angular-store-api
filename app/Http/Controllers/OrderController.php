@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Http\Resources\OrderResource;
+use App\Http\Requests\OrderRequest;
 
 class OrderController extends Controller
 {
@@ -36,24 +37,12 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
         $data = $request->input();
         if (!empty($data)) {
-            $order_data['order_status_id'] = (int)$data['orderStatusId']['id'];
-            $order_data['city_id'] = (int)$data['cityId']['id'];
-            $order_data['point_id'] = (int)$data['pointId']['id'];
-            $order_data['car_id'] = (int)$data['carId']['id'];
-            $order_data['color'] = $data['color'];
-            $order_data['date_from'] = $data['dateFrom'];
-            $order_data['date_to'] = $data['dateTo'];
-            $order_data['rate_id'] = (int)$data['rateId']['id'];
-            $order_data['price'] = $data['price'];
-            $order_data['is_full_tank'] = $data['isFullTank'];
-            $order_data['is_need_child_chair'] = $data['isNeedChildChair'];
-            $order_data['is_right_wheel'] = $data['isRightWheel'];
 
-            $order = new Order($order_data);
+            $order = new Order($data);
        
             $order->save();
             

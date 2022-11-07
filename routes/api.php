@@ -35,5 +35,5 @@ Route::group($groupData, function() {
     Route::resource('point','PointController')->only($pointMethods)->names('api.db.point');
     Route::resource('car','CarModelController')->only($carMethods)->names('api.db.car');
     Route::resource('rate','RateController')->only($rateMethods)->names('api.db.rate');
-    Route::resource('order','OrderController')->names('api.db.order')->middleware('options');
+    Route::resource('order','OrderController')->only($orderMethods)->names('api.db.order');
 });
