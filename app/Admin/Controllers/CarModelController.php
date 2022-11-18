@@ -80,13 +80,13 @@ class CarModelController extends AdminController
     {
         $form = new Form(new CarModel());
 
-        $form->text('name', __('Name'));
+        $form->text('name', __('Name'))->required();
         $form->textarea('description', __('Description'));
-        $form->number('priceMin', __('PriceMin'));
-        $form->number('priceMax', __('PriceMax'));
-        $form->text('number', __('Number'));
+        $form->number('priceMin', __('PriceMin'))->required();
+        $form->number('priceMax', __('PriceMax'))->required();
+        $form->text('number', __('Number'))->required();
         $form->hidden('thumbnail_id', __('Thumbnail id'));
-        $form->number('tank', __('Tank'));
+        $form->number('tank', __('Tank'))->required();
         $form->list('colors', __('Colors'))->rules('required|min:3')->min(1);
 
         $form->select('category_id',  __('Category'))->options(CategoryId::all()->pluck('name','id'));
