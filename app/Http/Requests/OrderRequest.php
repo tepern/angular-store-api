@@ -28,7 +28,7 @@ class OrderRequest extends FormRequest
             'city_id'        => 'required',
             'point_id'       => 'required',
             'car_id'         => 'required',
-            'color'          => 'required|string|max:10',
+            'color'          => 'required|string|max:20',
             'date_from'      => 'required|max:15',
             'date_to'        => 'required|max:15',
             'rate_id'        => 'required',
