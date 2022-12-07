@@ -14,7 +14,7 @@ echo "Running migrations..."
 php artisan migrate --force
 
 echo "Seeding"
-php artisan migrate:fresh --seed
+php artisan db:seed --force
 
 echo "Admin panel"
 php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
