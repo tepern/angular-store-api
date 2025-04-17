@@ -16,7 +16,8 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Эконом'
+                'name' => 'Эконом',
+                'description' => ''
             ],
             [
                 'name' => "Люкс",
