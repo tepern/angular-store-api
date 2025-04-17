@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminMenuSeeder::class);
         $this->call(AdminMenuOrderSeeder::class);
         $this->call(CategorySeeder::class);
-        $this->call(ThumbnailSeeder::class);
         $this->call(RateTypeSeeder::class);
         $this->call(RateSeeder::class);
         $this->call(CitySeeder::class);
+        $this->call(ThumbnailSeeder::class);
         $this->call(CarSeeder::class);
     }
 }

@@ -15,7 +15,7 @@ class ThumbnailSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database\data\data_car.json');
+        $json = File::get(base_path() . '/database/data/data_car.json');
         $data = json_decode($json);
         $cars = $data->data;
         foreach ($cars as $car) {
