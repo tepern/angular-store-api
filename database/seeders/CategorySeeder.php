@@ -14,6 +14,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        DB::table('category_ids')->truncate();
         $categories = [
             [
                 'name' => 'Эконом',

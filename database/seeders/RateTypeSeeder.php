@@ -14,6 +14,7 @@ class RateTypeSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('rate_types')->truncate();
         $rateTypes = [
             [
                 'name' => 'Почасовый',

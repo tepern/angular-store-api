@@ -14,6 +14,7 @@ class RateSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('rates')->truncate();
         $rates = [
             [
                 'rate_type_id' => 3,

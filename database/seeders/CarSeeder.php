@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\CarModel;
 use App\Models\CategoryId;
 use App\Models\Thumbnail;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
@@ -17,6 +18,7 @@ class CarSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('car_models')->truncate();
         $json = File::get(base_path() . '/database/data/data_car.json');
         $data = json_decode($json);
         $cars = $data->data;

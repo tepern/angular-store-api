@@ -14,23 +14,27 @@ class CitySeeder extends Seeder
      */
     public function run()
     {
-        
+        DB::table('cities')->truncate();
         $cities = [
             [
                 'name' => 'Москва',
                 'description' => 'Москва и Московская область'
             ],
             [
-                'name' => 'Ульяновск'
+                'name' => 'Ульяновск',
+                'description' => ''
             ],
             [
-                'name' => 'Екатеринбург'
+                'name' => 'Екатеринбург',
+                'description' => ''
             ],
             [
-                'name' => 'Ростов-на-Дону'
+                'name' => 'Ростов-на-Дону',
+                'description' => ''
             ],
             [
-                'name' => 'Самара'
+                'name' => 'Самара',
+                'description' => ''
             ]
         ];
         DB::table('cities')->insert($cities);

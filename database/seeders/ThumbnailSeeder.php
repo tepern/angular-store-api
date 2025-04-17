@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Thumbnail;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
@@ -15,6 +16,7 @@ class ThumbnailSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('thumbnails')->truncate();
         $json = File::get(base_path() . '/database/data/data_car.json');
         $data = json_decode($json);
         $cars = $data->data;
