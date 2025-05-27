@@ -17,7 +17,7 @@ class RateSeeder extends Seeder
         DB::table('rates')->truncate();
         $rates = [
             [
-                'rate_type_id' => 3,
+                'rate_type_id' => 1,
                 'price' => 1000
             ],
             [
