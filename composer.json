@@ -57,7 +57,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "audit": {
+            "ignore": ["PKSA-fwvh-pm3c-1m7b"]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
