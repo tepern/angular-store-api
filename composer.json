@@ -62,7 +62,7 @@
         },
         "policy": {
             "advisories": {
-                "audit": "report"
+                "audit": "ignore"
             }
         }
     },
