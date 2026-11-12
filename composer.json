@@ -60,6 +60,7 @@
         "platform": {
             "php": "8.3.35"
         },
+        "platform-check": false,
         "policy": {
             "advisories": {
                 "block": false
