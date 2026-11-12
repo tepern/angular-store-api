@@ -59,6 +59,11 @@
         "sort-packages": true,
         "platform": {
             "php": "8.3.35"
+        },
+        "policy": {
+            "advisories": {
+                "ignore-id": ["PKSA-fwvh-pm3c-1m7b"]
+            }
         }
     },
     "minimum-stability": "stable",
