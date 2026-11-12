@@ -62,7 +62,7 @@
         },
         "policy": {
             "advisories": {
-                "ignore-id": ["PKSA-fwvh-pm3c-1m7b"]
+                "audit": "report"
             }
         }
     },
