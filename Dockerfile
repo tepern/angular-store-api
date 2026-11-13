@@ -1,4 +1,4 @@
-FROM richarvey/nginx-php-fpm:latest
+FROM webdevops/php-nginx:8.3
 
 COPY . .
 
